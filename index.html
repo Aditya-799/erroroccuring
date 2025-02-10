@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form>
+    <input type="text" id="input">
+    <button id="getbutton">GET Data</button>
+    <button id="postbutton">POST Data</button>
+</form>
+</body>
+<script>
+    const input=document.getElementById('input');
+    const getbutton=document.getElementById('getbutton');
+    const postbutton=document.getElementById('postbutton');
+     const url='http://localhost:4000/';
+     getbutton.addEventListener('click',getInfo)
+    async function getInfo(e){
+        e.preventDefault();
+        const res=await fetch(url,{
+            method:'GET'
+        })
+        console.log(res)
+        const data=await res.json();
+        input.value=data.info;
+    }
+</script>
+</html>
