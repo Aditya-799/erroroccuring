@@ -7,8 +7,8 @@ app.get('/',(req,res)=>{
     res.status(200).json({info:'preset text'})
 })
 app.post('/',(req,res)=>{
-    const {obj}=req.body;
-    console.log(obj);
+    const {data}=req.body;
+    console.log(data);
 })
 app.listen(4000,()=>{
     console.log(__dirname);
